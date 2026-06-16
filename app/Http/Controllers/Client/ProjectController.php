@@ -111,7 +111,7 @@ class ProjectController extends Controller
             compact('projects')
         );
 
-        return $pdf->download(
+        return $pdf->stream(
             'data-project.pdf'
         );
     }
