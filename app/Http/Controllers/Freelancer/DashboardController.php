@@ -25,7 +25,7 @@ class DashboardController extends Controller
         )->count();
 
         $totalReviews = Review::where(
-            'freealncer_id',
+            'freelancer_id',
             $userId
         )->count();
 
