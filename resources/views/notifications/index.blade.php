@@ -4,40 +4,34 @@
 
 <div class="container">
 
-    <div class="card border-0 shadow rounded-4">
+    <div class="card shadow border-0">
 
-        <div class="card-header bg-primary text-white">
-
-            <h4 class="mb-0">
-
-                💬 Inbox Pesan
-
-            </h4>
-
+        <div class="card-header">
+            <h4>Notifikasi</h4>
         </div>
 
         <div class="card-body">
 
-            @forelse($users as $user)
+            @forelse($notifications as $notification)
 
-                <a
-                    href="{{ route('chat.show',$user->id) }}"
-                    class="list-group-item list-group-item-action mb-2 rounded">
+                <div class="alert alert-info">
 
-                    <strong>
+                    <h6>{{ $notification->title }}</h6>
 
-                        {{ $user->name }}
+                    <p class="mb-0">
+                        {{ $notification->message }}
+                    </p>
 
-                    </strong>
+                    <small class="text-muted">
+                        {{ $notification->created_at->diffForHumans() }}
+                    </small>
 
-                </a>
+                </div>
 
             @empty
 
                 <div class="text-center text-muted">
-
-                    Belum ada percakapan
-
+                    Belum ada notifikasi
                 </div>
 
             @endforelse
