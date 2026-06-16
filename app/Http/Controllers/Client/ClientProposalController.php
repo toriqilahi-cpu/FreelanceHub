@@ -49,12 +49,10 @@ class ClientProposalController extends Controller
 
         $contract = Contract::create([
             'project_id' => $proposal->project_id,
-            'proposal_id' => $proposal->id,
             'client_id' => $proposal->project->client_id,
             'freelancer_id' => $proposal->freelancer_id,
             'status' => 'active'
         ]);
-
         Payment::create([
 
             'contract_id' => $contract->id,
