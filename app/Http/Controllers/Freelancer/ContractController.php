@@ -27,7 +27,7 @@ class ContractController extends Controller
     public function reviews()
     {
         $reviews = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             auth()->id()
         )
         ->latest()

@@ -21,12 +21,12 @@ class ProfileController extends Controller
         );
 
         $averageRating = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             auth()->id()
         )->avg('rating');
 
         $totalReviews = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             auth()->id()
         )->count();
 

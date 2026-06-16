@@ -10,7 +10,7 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             auth()->id()
         )
         ->with('project')

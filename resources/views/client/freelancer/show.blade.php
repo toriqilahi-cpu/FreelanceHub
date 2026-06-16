@@ -351,7 +351,7 @@
                                 </div>
 
                                 <p class="mb-0 mt-2">
-                                    {{ $review->comment }}
+                                    {{ $review->review }}
                                 </p>
 
                             </div>

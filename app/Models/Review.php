@@ -7,14 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     protected $fillable = [
-
         'project_id',
-        'contract_id',
-        'reviewer_id',
-        'reviewee_id',
+        'client_id',
+        'freelancer_id',
         'rating',
-        'comment'
-
+        'review'
     ];
 
     public function project()
@@ -22,11 +19,19 @@ class Review extends Model
         return $this->belongsTo(Project::class);
     }
 
-    public function reviewer()
+    public function client()
     {
         return $this->belongsTo(
             User::class,
-            'reviewer_id'
+            'client_id'
+        );
+    }
+
+    public function freelancer()
+    {
+        return $this->belongsTo(
+            User::class,
+            'freelancer_id'
         );
     }
 }

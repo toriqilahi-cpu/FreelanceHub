@@ -34,7 +34,7 @@
 
                         <h5 class="fw-bold">
 
-                            Client #{{ $review->reviewer_id }}
+                            Client #{{ $review->client_id }}
 
                         </h5>
 
@@ -50,7 +50,7 @@
 
                     <p class="mb-0">
 
-                        {{ $review->comment }}
+                        {{ $review->review }}
 
                     </p>
 

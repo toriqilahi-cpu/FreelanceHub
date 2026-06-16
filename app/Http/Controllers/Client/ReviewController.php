@@ -47,19 +47,18 @@ class ReviewController extends Controller
 
         Review::create([
 
-            'project_id'  => $request->project_id,
+            'project_id' => $request->project_id,
 
-            'contract_id' => $contract->id,
+            'client_id' => auth()->id(),
 
-            'reviewer_id' => auth()->id(),
+            'freelancer_id' => $request->freelancer_id,
 
-            'reviewee_id' => $request->freelancer_id,
+            'rating' => $request->rating,
 
-            'rating'      => $request->rating,
-
-            'comment'     => $request->review
+            'review' => $request->review
 
         ]);
+
 
         return redirect()
             ->route('projects.index')

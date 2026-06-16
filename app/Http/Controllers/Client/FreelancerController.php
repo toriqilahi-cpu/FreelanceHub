@@ -77,14 +77,14 @@ class FreelancerController extends Controller
         $profile = $user->freelancerProfile;
 
         $reviews = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             $user->id
         )
         ->latest()
         ->get();
 
         $avgRating = Review::where(
-            'reviewee_id',
+            'freelancer_id',
             $user->id
         )
         ->avg('rating');
