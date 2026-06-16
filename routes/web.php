@@ -35,7 +35,7 @@ Route::get(
 Route::get(
     '/projects/{project}/detail',
     [ProjectController::class, 'show']
-)->name('projects.show');
+)->name('projects.detail');
 
 
 /*
@@ -135,7 +135,7 @@ Route::middleware(['auth', 'role:client'])
         Route::resource(
             'projects',
             ProjectController::class
-        );
+        )->except(['update']);
 
         Route::get(
             '/projects/{project}/proposals',
