@@ -184,11 +184,6 @@ Route::middleware(['auth', 'role:client'])
         )->name('projects.pdf');
 
         Route::get(
-            '/projects/export/excel',
-            [ProjectController::class, 'exportExcel']
-        )->name('projects.excel');
-
-        Route::get(
             '/projects/{project}/edit',
             [ProjectController::class, 'edit']
         )->name('projects.edit');

@@ -23,13 +23,6 @@
 
             </a>
 
-            <a href="{{ route('projects.excel') }}" class="btn btn-success rounded-pill px-4">
-
-                <i class="bi bi-file-earmark-excel-fill"></i>
-                Export Excel
-
-            </a>
-
             <a href="{{ route('projects.create') }}" class="btn btn-success rounded-pill px-4">
 
                 <i class="bi bi-plus-lg"></i>

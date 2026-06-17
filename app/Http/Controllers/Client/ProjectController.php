@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
-use App\Exports\ProjectsExport;
-use Maatwebsite\Excel\Facades\Excel;
 class ProjectController extends Controller
 {
     public function index(Request $request)
@@ -113,14 +111,6 @@ class ProjectController extends Controller
 
         return $pdf->stream(
             'data-project.pdf'
-        );
-    }
-
-    public function exportExcel()
-    {
-        return Excel::download(
-            new ProjectsExport,
-            'data-project.xlsx'
         );
     }
 
